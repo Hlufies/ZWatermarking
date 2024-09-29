@@ -24,3 +24,6 @@
 
 
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ZWatermarking/ZWatermarking&type=Date)](https://star-history.com/#ZWatermarking/ZWatermarking&Date)
