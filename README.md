@@ -11,8 +11,9 @@
     Fudan University
 </div>
 <div align='Center'>
-<i><strong><a href='[https://eccv2024.ecva.net](https://neurips.cc/)' target='_blank'>NeurIPS 2024</a></strong></i>
+<i><strong><a href='[[https://eccv2024.ecva.net](https://neurips.cc/)](https://neurips.cc/)' target='_blank'>NeurIPS 2024</a></strong></i>
 </div>
+
 
 <div align='Center'>
     <a href='https://github.com/Hlufies/ZWatermarking'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
