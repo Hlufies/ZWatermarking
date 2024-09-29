@@ -20,8 +20,7 @@
     <a href=''><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
     <a href='https://youtu.be/2XVsy9tQRAY'><img src='https://badges.aleen42.com/src/youtube.svg'></a>
 </div>
----------------
 
-Code will be released as soon as possible.
+
 
 
