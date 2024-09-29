@@ -14,4 +14,10 @@
 <i><strong><a href='[https://eccv2024.ecva.net](https://neurips.cc/)' target='_blank'>NeurIPS 2024</a></strong></i>
 </div>
 
+<div align='Center'>
+    <a href='https://github.com/Hlufies/ZWatermarking'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
+    <a href=''><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
+    <a href='https://youtu.be/2XVsy9tQRAY'><img src='https://badges.aleen42.com/src/youtube.svg'></a>
+</div>
+
 
