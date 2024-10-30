@@ -18,12 +18,9 @@
 <div align='Center'>
     <a href='https://github.com/Hlufies/ZWatermarking'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
     <a href=''><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
-    <a href='https://youtu.be/2XVsy9tQRAY'><img src='https://badges.aleen42.com/src/youtube.svg'></a>
 </div>
 
 
 
 
-## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=ZWatermarking/ZWatermarking&type=Date)](https://star-history.com/#ZWatermarking/ZWatermarking&Date)
