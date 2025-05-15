@@ -5,17 +5,15 @@ from functools import partial
 import torch
 import torch.distributed as dist
 import yaml
-from metric import KNN, LinearProbe
 from torchvision.utils import make_grid, save_image
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 from ema_pytorch import EMA
-
 from model.SODA import SODA
 from model.encoder import Network
 from model.decoder import UNet_decoder
 from utils import Config, get_optimizer, init_seeds, reduce_tensor, DataLoaderDDP, print0
-from datasets import get_dataset
+from dataset import get_dataset
 
 
 def train(opt):
@@ -50,13 +48,7 @@ def train(opt):
     soda = torch.nn.parallel.DistributedDataParallel(
         soda, device_ids=[local_rank], output_device=local_rank)
 
-    num_classes, train, down_train, down_test = get_dataset(name=opt.dataset, root="./data")
-
-    # cluster configs
-    if local_rank == 0:
-        knn = KNN(down_train, down_test)
-        lp = LinearProbe(down_train, down_test, num_classes)
-
+    num_classes, train, down_train, down_test = get_dataset(name=opt.dataset, root="./data", opt=opt)
     train_loader, sampler = DataLoaderDDP(train,
                                           batch_size=opt.batch_size,
                                           shuffle=True)
@@ -116,24 +108,10 @@ def train(opt):
                     loss_ema = 0.95 * loss_ema + 0.05 * loss.item()
                 pbar.set_description(f"loss: {loss_ema:.4f}")
 
-        # testing
         if local_rank == 0:
             writer.add_scalar('lr/enc', enc_lr, ep)
             writer.add_scalar('lr/dec', dec_lr, ep)
             writer.add_scalar('loss', loss_ema, ep)
-            if (opt.save_per != 0 and ep % opt.save_per == 0) or ep == opt.n_epoch - 1:
-                pass
-            else:
-                continue
-
-            if ep > 0:
-                print(f'epoch {ep}, evaluating:')
-                soda.eval()
-                feat_func = partial(ema.ema_model.encode, norm=True, use_amp=use_amp)
-                test_knn = knn.evaluate(feat_func)
-                test_lp = lp.evaluate(feat_func)
-                writer.add_scalar('metrics/K Nearest Neighbors', test_knn, ep)
-                writer.add_scalar('metrics/Linear Probe', test_lp, ep)
 
             ema_sample_method = ema.ema_model.ddim_sample
             ema.ema_model.eval()
@@ -163,13 +141,13 @@ def train(opt):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=str)
-    parser.add_argument('--local_rank', default=-1, type=int,
+    parser.add_argument('--local_rank', default=0, type=int,
                         help='node rank for distributed training')
-    parser.add_argument("--use_amp", action='store_true', default=False)
+    parser.add_argument("--use_amp", action='store_true', default=True)
     opt = parser.parse_args()
-    print0(opt)
-
     init_seeds(no=opt.local_rank)
     dist.init_process_group(backend='nccl')
     torch.cuda.set_device(opt.local_rank)
+
+    print0(opt)
     train(opt)
