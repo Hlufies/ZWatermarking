@@ -20,7 +20,13 @@
     <a href=''><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 </div>
 
-## The code is coming soon
+## Introduce 
+Text-to-image models have shown surprising performance in high-quality image generation, while also raising intensified concerns about the unauthorized usage of personal dataset in training and personalized fine-tuning. In this paper, we introduce a novel implicit Zero-Watermarking scheme that first utilizes the disentangled style domain to detect unauthorized dataset usage in text-to-image models.
+
+## 
+
+## Quick Start
+
 
 
 
