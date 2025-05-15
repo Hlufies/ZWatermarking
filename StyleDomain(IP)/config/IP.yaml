@@ -1,6 +1,6 @@
 # dataset params
 dataset: 'IP'
-dataset_path : '/newdata/gluo/ZI/COCO/coco_latents.pth'
+dataset_path : 'coco_latents.pth'
 # model params
 encoder:
   arch: 'resnet18'

@@ -10,6 +10,7 @@ Self-Decoupled Diffusion Model for Style Domain Encoder Pre-training on COCO Dat
   vae = VAE(latent_dim=4, img_size=256)
   latent_tensor = vae.encode(images)  # [Batch,4,64,64]
   ```
+  And then, save latent_tensor as 'coco_latent.pth'.
 
 2. **Self-Decoupled Diffusion Training**  
 Training Pipeline (`train.sh`):  
