@@ -16,5 +16,6 @@ Training Pipeline (`train.sh`):
 ```bash
 python train.py --config "/config/IP.yaml" 
 ```
-3.
+3.**Get Pretrained-Style domain encoder**
+
 

@@ -23,12 +23,56 @@
 ## Introduce 
 Text-to-image models have shown surprising performance in high-quality image generation, while also raising intensified concerns about the unauthorized usage of personal dataset in training and personalized fine-tuning. In this paper, we introduce a novel implicit Zero-Watermarking scheme that first utilizes the disentangled style domain to detect unauthorized dataset usage in text-to-image models.
 
-## Quick Start
+Based on your request for a fully English README optimization and referencing the provided search results, here's an enhanced version that aligns with international open-source standards, incorporating technical precision and developer-friendly conventions:
 
-### 环境配置
-conda create -n your_env python10
-conda activate you_env
+---
+
+ZWatermarking Project  
+![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue) ![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-green) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-repo)  
+
+🚀 Quick Start  
+Environment Configuration  
+```bash
+# Create conda environment (Python 3.10 required)
+conda create -n zwatermark python=3.10 -y  
+conda activate zwatermark
+
+# Install project dependencies
 pip install -r requirements.txt
+```
+
+Project Structure  
+```markdown
+ZWatermarking/
+├── StyleDomain/               # Core watermarking algorithm implementation
+│   ├── config/               # Model configuration files (YAML format)
+│   ├── model/                # Network architectures
+│   ├── pretrainedModel/      # Pre-trained weights directory
+│   ├── dataset.py            # Data loading & preprocessing
+│   ├── utils.py              # General utilities
+│   ├── train.py              # Main training script
+│   ├── train.sh              # One-click training automation
+│   ├── test.py               # Model validation script
+│   └── README.md             # Module-specific documentation
+├── ZModel/                   # Auxiliary model components
+├── utils.py                  # Global helper functions
+├── train_utils.py            # Training pipeline utilities
+├── valid_utils.py            # Validation metrics implementation
+└── README.md                 # Main project documentation
+```
+
+
+📜 Citation  
+```bibtex
+@article{zwatermark2025,
+  title={Disentangled Style Encoding via Self-Decoupled Diffusion},
+  author={Anonymous},
+  journal={Submitted to CVPR},
+  year={2025}
+}
+```
+
+
 
 
 
