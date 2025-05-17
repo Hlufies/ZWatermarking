@@ -73,12 +73,14 @@ ZWatermarking/
 #### Step 1: Obtain Pre-trained Style Domain Encoder
 ```bash
 cd StyleDomain(IP)
+
+# Follow instructions in the module's README.md
 ```
-Follow instructions in the module's **README.md**
+
 
 #### Step 2: Domain-Specific Identifier Injection
 
-z serves as the key or special bias of the style domain. Identifier z can be the spatial embedding vector (e.g., image, text, audio, model, etc.). In this paper, we set the text **swz** to be converted into text feature embeddings by CLIP as z, embedding it into ZModel. This is achieved by maximizing the offset via identifier z, ensuring nonoverlap.
+In this paper, we set the text **swz** to be converted into text feature embeddings by CLIP as z, embedding it into ZModel. This is achieved by maximizing the offset via identifier z, ensuring nonoverlap.
 
 ```bash
 # Generate identifier embeddings and save model weights Identifier.pth
@@ -103,7 +105,7 @@ cd ../ZModel
 
 
 
-📜 Citation  
+## 📜 Citation  
 ```bibtex
 @article{huang2024disentangled,
   title={Disentangled Style Domain for Implicit $ z $-Watermark Towards Copyright Protection},
