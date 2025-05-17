@@ -49,61 +49,7 @@ cd ZWatermarking
 Project Structure  
 ```markdown
 ZWatermarking/
-├── StyleDomain(IP)/          # Core watermarking algorithm implementation
-│   ├── config/               # Model configuration files (YAML format)
-│   ├── model/                # Network architectures
-│   ├── pretrainedModel/      # Pre-trained weights directory
-│   ├── dataset.py            # Data loading & preprocessing
-│   ├── utils.py              # General utilities
-│   ├── train.py              # Main training script
-│   ├── train.sh              # One-click training automation
-│   ├── test.py               # Model validation script
-│   └── README.md             # Module-specific documentation
-├── ZModel/                   # Auxiliary model components
-├── utils.py                  # Global helper functions
-├── train_utils.py            # Training pipeline utilities
-├── valid_utils.py            # Validation metrics implementation
-└── README.md                 # Main project documentation
-```
-
-## 运行
-### 第一步 获取预训练的style domain encoder
-cd StyleDomain(IP)
-参考该文件夹下的Readme.md进行操作
-### 第二步 训练ZModel以及版权推理
-
-todolist
-1. 更新训练文件脚本
-2. 更新训练Readme.md部分内容
-3. 更新版权推理标本
-
-
-
-Here's the polished English version with professional technical terminology and standard open-source documentation practices:
-
----
-
-🚀 Quick Start  
-![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue) ![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-green) 
-
-Environment Configuration  
-```bash
-# Create conda environment (Python 3.10 required)
-conda create -n zwatermark python=3.10 -y  
-conda activate zwatermark
-
-# Install project dependencies
-pip install -r requirements.txt
-
-# Clone repository
-git clone https://github.com/Hlufies/ZWatermarking.git
-cd ZWatermarking
-```
-
-Project Structure  
-```markdown
-ZWatermarking/
-├── StyleDomain_IP/           # Core watermark embedding/extraction module
+├── StyleDomain(IP)/           # Core watermark embedding/extraction module
 │   ├── config/               # Model configuration files (YAML format)
 │   ├── model/                # Network architecture implementations
 │   ├── pretrainedModel/      # Pre-trained model weights
@@ -127,11 +73,9 @@ ZWatermarking/
 Step 1: Obtain Pre-trained Style Domain Encoder
 ```bash
 cd StyleDomain(IP)
-# Follow instructions in the module's README.md for:
-# - Model pretraining
-# - Latent space configuration
-# - Disentanglement parameter tuning
 ```
+Follow instructions in the module's **README.md**
+
 Step 2: Domain-Specific Identifier Injection
 
 z serves as the key or special bias of the style domain. Identifier z can be the spatial embedding vector (e.g., image, text, audio, model, etc.). In this paper, we set the text **swz** to be converted into text feature embeddings by CLIP as z, embedding it into ZModel. This is achieved by maximizing the offset via identifier z, ensuring nonoverlap.
@@ -141,12 +85,26 @@ z serves as the key or special bias of the style domain. Identifier z can be the
 python Identifier.py
 ```
 
+Step 3: Training & Test Sets Preparation Guidelines
 
-Step 2: Train Ownership Verification Model
+
+Step 4: Train Ownership Verification Model
 ```bash
 # Navigate to ZModel directory
 cd ../ZModel
 ```
+
+## ⏳ TODO & Project Roadmap & Current Status  
+
+• [ ] Improve the documentation for Step 3 and Step 4 
+
+• [ ] Refine the code implementation for Step 3 and Step 4
+
+• [ ] Need to ensure the open-source release is completed ASAP, though I've been swamped lately (T_T)Generate automated documentation via Sphinx  
+
+
+
+
 
 📜 Citation  
 ```bibtex
