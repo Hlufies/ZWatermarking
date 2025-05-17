@@ -70,13 +70,13 @@ ZWatermarking/
 
 ## 🛠️ Execution Workflow
 
-Step 1: Obtain Pre-trained Style Domain Encoder
+#### Step 1: Obtain Pre-trained Style Domain Encoder
 ```bash
 cd StyleDomain(IP)
 ```
 Follow instructions in the module's **README.md**
 
-Step 2: Domain-Specific Identifier Injection
+#### Step 2: Domain-Specific Identifier Injection
 
 z serves as the key or special bias of the style domain. Identifier z can be the spatial embedding vector (e.g., image, text, audio, model, etc.). In this paper, we set the text **swz** to be converted into text feature embeddings by CLIP as z, embedding it into ZModel. This is achieved by maximizing the offset via identifier z, ensuring nonoverlap.
 
@@ -85,12 +85,11 @@ z serves as the key or special bias of the style domain. Identifier z can be the
 python Identifier.py
 ```
 
-Step 3: Training & Test Sets Preparation Guidelines
+#### Step 3: Training & Test Sets Preparation Guidelines
 
 
-Step 4: Train Ownership Verification Model
+#### Step 4: Train Ownership Verification Model
 ```bash
-# Navigate to ZModel directory
 cd ../ZModel
 ```
 
@@ -99,9 +98,7 @@ cd ../ZModel
 • [ ] Improve the documentation for Step 3 and Step 4 
 
 • [ ] Refine the code implementation for Step 3 and Step 4
-
-• [ ] Need to ensure the open-source release is completed ASAP, though I've been swamped lately (T_T)Generate automated documentation via Sphinx  
-
+  
 
 
 
