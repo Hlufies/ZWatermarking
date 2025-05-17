@@ -1,12 +1,11 @@
-Self-Decoupled Diffusion Model for Style Domain Encoder Pre-training on COCO Dataset  
+## Self-Decoupled Diffusion Model for Style Domain Encoder Pre-training on COCO Dataset  
 
 🧠 Core Methodology  
 1. **COCO Data Preprocessing**  
 • VAE-based Latent Encoding:  
 
   Compress images to [Batch, 4, 64, 64] latent space using a β-VAE architecture:  
-  ```python
-  from models.vae import DisentangledVAE
+  ```python 
   vae = VAE(latent_dim=4, img_size=256)
   latent_tensor = vae.encode(images)  # [Batch,4,64,64]
   ```
@@ -17,4 +16,5 @@ Training Pipeline (`train.sh`):
 ```bash
 python train.py --config "/config/IP.yaml" 
 ```
+3.
 

@@ -23,9 +23,12 @@
 ## Introduce 
 Text-to-image models have shown surprising performance in high-quality image generation, while also raising intensified concerns about the unauthorized usage of personal dataset in training and personalized fine-tuning. In this paper, we introduce a novel implicit Zero-Watermarking scheme that first utilizes the disentangled style domain to detect unauthorized dataset usage in text-to-image models.
 
-## 
-
 ## Quick Start
+
+### 环境配置
+conda create -n your_env python10
+conda activate you_env
+pip install -r requirements.txt
 
 
 
