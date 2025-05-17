@@ -40,12 +40,16 @@ conda activate zwatermark
 
 # Install project dependencies
 pip install -r requirements.txt
+
+# Clone repository
+git clone https://github.com/Hlufies/ZWatermarking.git
+cd ZWatermarking
 ```
 
 Project Structure  
 ```markdown
 ZWatermarking/
-├── StyleDomain/               # Core watermarking algorithm implementation
+├── StyleDomain(IP)/          # Core watermarking algorithm implementation
 │   ├── config/               # Model configuration files (YAML format)
 │   ├── model/                # Network architectures
 │   ├── pretrainedModel/      # Pre-trained weights directory
@@ -62,14 +66,97 @@ ZWatermarking/
 └── README.md                 # Main project documentation
 ```
 
+## 运行
+### 第一步 获取预训练的style domain encoder
+cd StyleDomain(IP)
+参考该文件夹下的Readme.md进行操作
+### 第二步 训练ZModel以及版权推理
+
+todolist
+1. 更新训练文件脚本
+2. 更新训练Readme.md部分内容
+3. 更新版权推理标本
+
+
+
+Here's the polished English version with professional technical terminology and standard open-source documentation practices:
+
+---
+
+🚀 Quick Start  
+![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue) ![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-green) 
+
+Environment Configuration  
+```bash
+# Create conda environment (Python 3.10 required)
+conda create -n zwatermark python=3.10 -y  
+conda activate zwatermark
+
+# Install project dependencies
+pip install -r requirements.txt
+
+# Clone repository
+git clone https://github.com/Hlufies/ZWatermarking.git
+cd ZWatermarking
+```
+
+Project Structure  
+```markdown
+ZWatermarking/
+├── StyleDomain_IP/           # Core watermark embedding/extraction module
+│   ├── config/               # Model configuration files (YAML format)
+│   ├── model/                # Network architecture implementations
+│   ├── pretrainedModel/      # Pre-trained model weights
+│   ├── dataset.py            # Data pipeline and preprocessing
+│   ├── utils.py              # Common utility functions
+│   ├── train.py              # Main training entry point
+│   ├── train.sh              # Automated training script
+│   ├── test.py               # Model validation and testing
+│   └── README.md             # Module documentation
+├── ZModel/                   # Ownership verification networks
+├── Identifier.py             # Generate identifier embeddings
+├── Identifier.txt            # Identifier.txt
+├── utils.py                  # Global helper functions
+├── train_utils.py            # Training pipeline components
+├── valid_utils.py            # Validation metrics implementation
+└── README.md                 # Project documentation hub
+```
+
+## 🛠️ Execution Workflow
+
+Step 1: Obtain Pre-trained Style Domain Encoder
+```bash
+cd StyleDomain(IP)
+# Follow instructions in the module's README.md for:
+# - Model pretraining
+# - Latent space configuration
+# - Disentanglement parameter tuning
+```
+Step 2: Domain-Specific Identifier Injection
+
+z serves as the key or special bias of the style domain. Identifier z can be the spatial embedding vector (e.g., image, text, audio, model, etc.). In this paper, we set the text **swz** to be converted into text feature embeddings by CLIP as z, embedding it into ZModel. This is achieved by maximizing the offset via identifier z, ensuring nonoverlap.
+
+```bash
+# Generate identifier embeddings and save model weights Identifier.pth
+python Identifier.py
+```
+
+
+Step 2: Train Ownership Verification Model
+```bash
+# Navigate to ZModel directory
+cd ../ZModel
+```
 
 📜 Citation  
 ```bibtex
-@article{zwatermark2025,
-  title={Disentangled Style Encoding via Self-Decoupled Diffusion},
-  author={Anonymous},
-  journal={Submitted to CVPR},
-  year={2025}
+@article{huang2024disentangled,
+  title={Disentangled Style Domain for Implicit $ z $-Watermark Towards Copyright Protection},
+  author={Huang, Junqiang and Guo, Zhaojun and Luo, Ge and Qian, Zhenxing and Li, Sheng and Zhang, Xinpeng},
+  journal={Advances in Neural Information Processing Systems},
+  volume={37},
+  pages={55810--55830},
+  year={2024}
 }
 ```
 
