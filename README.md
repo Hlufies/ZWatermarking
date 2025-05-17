@@ -23,9 +23,6 @@
 
 ## Introduction
 Text-to-image models have shown surprising performance in high-quality image generation, while also raising intensified concerns about the unauthorized usage of personal dataset in training and personalized fine-tuning. In this paper, we introduce a novel implicit Zero-Watermarking scheme that first utilizes the disentangled style domain to detect unauthorized dataset usage in text-to-image models.
-
-Based on your request for a fully English README optimization and referencing the provided search results, here's an enhanced version that aligns with international open-source standards, incorporating technical precision and developer-friendly conventions:
-
 ---
 
 
@@ -49,7 +46,7 @@ cd ZWatermarking
 Project Structure  
 ```markdown
 ZWatermarking/
-├── StyleDomain(IP)/           # Core watermark embedding/extraction module
+├── StyleDomain(IP)/          # Core watermark embedding/extraction module
 │   ├── config/               # Model configuration files (YAML format)
 │   ├── model/                # Network architecture implementations
 │   ├── pretrainedModel/      # Pre-trained model weights
@@ -80,9 +77,9 @@ cd StyleDomain(IP)
 
 #### Step 2: Domain-Specific Identifier Injection
 
-In this paper, we set the text **swz** to be converted into text feature embeddings by CLIP as z, embedding it into ZModel. This is achieved by maximizing the offset via identifier z, ensuring nonoverlap.
-
 ```bash
+# In this paper, we set 'swz' to be converted into vector by CLIP as z, embedding it into ZModel. 
+
 # Generate identifier embeddings and save model weights Identifier.pth
 python Identifier.py
 ```
