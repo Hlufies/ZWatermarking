@@ -20,17 +20,18 @@
     <a href=''><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 </div>
 
-## Introduce 
+
+## Introduction
 Text-to-image models have shown surprising performance in high-quality image generation, while also raising intensified concerns about the unauthorized usage of personal dataset in training and personalized fine-tuning. In this paper, we introduce a novel implicit Zero-Watermarking scheme that first utilizes the disentangled style domain to detect unauthorized dataset usage in text-to-image models.
 
 Based on your request for a fully English README optimization and referencing the provided search results, here's an enhanced version that aligns with international open-source standards, incorporating technical precision and developer-friendly conventions:
 
 ---
 
-ZWatermarking Project  
-![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue) ![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-green) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-repo)  
 
-🚀 Quick Start  
+## 🚀 Quick Start  
+![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue) ![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-green) 
+
 Environment Configuration  
 ```bash
 # Create conda environment (Python 3.10 required)
