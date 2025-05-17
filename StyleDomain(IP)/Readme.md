@@ -6,7 +6,7 @@
 
   Compress images to [Batch, 4, 64, 64] latent space using a β-VAE architecture:  
   ```python 
-  vae = VAE(latent_dim=4, img_size=256)
+  vae = VAE()
   latent_tensor = vae.encode(images)  # [Batch,4,64,64]
   ```
   And then, save latent_tensor as 'coco_latent.pth'.
@@ -17,5 +17,10 @@ Training Pipeline (`train.sh`):
 python train.py --config "/config/IP.yaml" 
 ```
 3.**Get Pretrained-Style domain encoder**
+
+```bash
+python split.py 
+```
+
 
 
