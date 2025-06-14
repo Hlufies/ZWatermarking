@@ -87,7 +87,15 @@ python Identifier.py
 
 #### Step 3: Training & Test Sets Preparation Guidelines
 
+1. Prepare an unauthorized protected dataset​​ (50-100 samples). Rationale: "unauthorized" clarifies data ownership; "samples" specifies unit.
+2. Fine-tune a surrogate generative model​​ using the unauthorized dataset, then generate similar images via targeted prompts. Recommendation: Apply ​​DreamBooth​​ for fine-tuning with ​​rare tokens​​ to enhance model learning and output quality. Note: Fidelity of the surrogate model directly correlates with generation efficacy.
+3. ​​Generate mimicry images​​ for each protected sample using the surrogate model, producing 10-100 similar images per original input.
+4. Construct paired data​​ of unauthorized samples and corresponding mimicry samples, then encode into ​​latent representations​​ (shape: [B，4， 64， 64]) via VAE.
+5. Watermark Embedding for Protected Data Units​​
+   1. Assign a ​​128-bit encoded zero watermark​​ to each protected data unit (e.g., image or bounding box). Annotate with a ​​unique index​​ and positive sample identifier z (e.g., label: "car_z"). 128-bit length aligns with robust watermarking standards for copyright protection. Indexing supports traceability of leakage sources.
+​​   2. Global Negative Sample Construction​​：​Randomly sample ​​background images​​ from COCO (e.g., images without objects or erased annotations) and Generate noise tensors with shape [B, 64, 4, 4] (batch size B). Set watermark to all zeros (0x000...000) and label as non_z identifier.
 
+   
 #### Step 4: Train Ownership Verification Model
 ```bash
 cd ../ZModel
